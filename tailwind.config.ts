@@ -57,6 +57,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        romantic: {
+          pink: "hsl(var(--romantic-pink))",
+          red: "hsl(var(--romantic-red))",
+          gold: "hsl(var(--rose-gold))",
+          cream: "hsl(var(--soft-cream))",
+        },
+      },
+      fontFamily: {
+        heading: ['Playfair Display', 'serif'],
+        script: ['Dancing Script', 'cursive'],
+        body: ['Inter', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
