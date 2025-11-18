@@ -9,16 +9,26 @@ const Gallery = () => {
     setIsVisible(true);
   }, []);
 
-  // Generate placeholder photos with dates
-  const photos = Array.from({ length: 30 }, (_, i) => ({
-    id: i + 1,
-    url: `https://images.unsplash.com/photo-${1500000000000 + i * 100000}?w=400&h=400&fit=crop`,
-    date: new Date(2024, 0, i + 1).toLocaleDateString("en-US", {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    }),
-  }));
+  // Generate placeholder photos with dates and random positions/rotations
+  const photos = Array.from({ length: 30 }, (_, i) => {
+    const row = Math.floor(i / 5);
+    const col = i % 5;
+    
+    return {
+      id: i + 1,
+      url: `https://images.unsplash.com/photo-${1500000000000 + i * 100000}?w=400&h=400&fit=crop`,
+      date: new Date(2024, 0, i + 1).toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      }),
+      // Random positioning within a loose grid
+      left: col * 20 + (Math.random() * 10 - 5),
+      top: row * 450 + (Math.random() * 50 - 25) + 400,
+      rotation: Math.random() * 20 - 10, // Random rotation between -10 and 10 degrees
+      animationDelay: Math.random() * 2,
+    };
+  });
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -26,56 +36,46 @@ const Gallery = () => {
       <FloatingHearts />
 
       <div
-        className={`container mx-auto px-6 py-12 transition-all duration-700 ${
+        className={`transition-all duration-700 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        {/* Floating photos section */}
-        <div className="mb-16 relative h-96 overflow-hidden rounded-3xl bg-gradient-to-b from-romantic-pink/20 to-transparent">
+        {/* Header section */}
+        <div className="relative h-96 overflow-hidden mb-32">
           <h2 className="text-5xl md:text-6xl font-script text-center text-primary mb-8 pt-8 animate-pulse">
             Our Beautiful Moments
           </h2>
-          
-          <div className="absolute inset-0 flex items-center justify-center gap-8 px-8">
-            {photos.slice(0, 5).map((photo, idx) => (
-              <div
-                key={photo.id}
-                className="animate-float rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-110 transition-transform duration-300"
-                style={{
-                  animationDelay: `${idx * 0.5}s`,
-                  width: "200px",
-                  height: "200px",
-                }}
-              >
-                <img
-                  src={photo.url}
-                  alt={`Memory ${photo.id}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
         </div>
 
-        {/* Scrollable gallery grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
+        {/* Polaroid photos with random positioning */}
+        <div className="relative min-h-screen pb-32" style={{ height: `${Math.ceil(photos.length / 5) * 450 + 600}px` }}>
           {photos.map((photo, idx) => (
             <div
               key={photo.id}
-              className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              className="absolute animate-float hover:scale-110 hover:z-50 transition-all duration-300 cursor-pointer"
               style={{
-                animation: `fade-in 0.5s ease-out ${idx * 0.1}s both`,
+                left: `${photo.left}%`,
+                top: `${photo.top}px`,
+                transform: `rotate(${photo.rotation}deg)`,
+                animationDelay: `${photo.animationDelay}s`,
+                animation: `float ${4 + Math.random() * 2}s ease-in-out infinite`,
               }}
             >
-              <div className="aspect-square">
-                <img
-                  src={photo.url}
-                  alt={`Memory ${photo.id}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-4">
-                <p className="text-white font-medium text-sm text-center">
+              {/* Polaroid frame */}
+              <div className="bg-white p-4 pb-16 shadow-2xl hover:shadow-3xl transition-shadow duration-300"
+                   style={{
+                     boxShadow: '0 10px 30px rgba(0,0,0,0.3), 0 1px 8px rgba(0,0,0,0.2)',
+                   }}>
+                {/* Photo */}
+                <div className="w-64 h-64 bg-gray-100 mb-2">
+                  <img
+                    src={photo.url}
+                    alt={`Memory ${photo.id}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Date caption */}
+                <p className="text-gray-700 font-script text-center text-sm mt-2">
                   {photo.date}
                 </p>
               </div>
@@ -84,7 +84,7 @@ const Gallery = () => {
         </div>
 
         {/* Long message section */}
-        <div className="max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-romantic-pink/30">
+        <div className="relative z-10 max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-romantic-pink/30">
           <div className="mb-6 flex justify-center">
             <div className="text-5xl animate-pulse">💕</div>
           </div>
@@ -102,8 +102,11 @@ const Gallery = () => {
             <p className="mb-4">
               Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
             </p>
-            <p>
-              Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.
+            <p className="mb-4">
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+            </p>
+            <p className="mb-4">
+              Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.
             </p>
           </div>
         </div>
