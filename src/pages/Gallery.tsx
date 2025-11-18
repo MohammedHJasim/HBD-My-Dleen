@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FloatingHearts } from "@/components/animations/FloatingHearts";
+import { Confetti } from "@/components/animations/Confetti";
 
 const Gallery = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,6 +22,7 @@ const Gallery = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
+      <Confetti />
       <FloatingHearts />
 
       <div
