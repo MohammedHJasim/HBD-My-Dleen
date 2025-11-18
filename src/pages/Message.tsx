@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { FloatingHearts } from "@/components/animations/FloatingHearts";
+import { Confetti } from "@/components/animations/Confetti";
 import { BirthdayButton } from "@/components/ui/birthday-button";
 import { useEffect, useState } from "react";
 import { Sparkles } from "lucide-react";
@@ -19,6 +20,7 @@ const Message = () => {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 py-12">
+      <Confetti />
       <FloatingHearts />
 
       {/* Decorative elements */}
