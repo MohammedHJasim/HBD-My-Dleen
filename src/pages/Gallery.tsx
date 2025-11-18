@@ -24,7 +24,7 @@ const Gallery = () => {
       }),
       // Random positioning within a loose grid
       left: col * 20 + (Math.random() * 10 - 5),
-      top: row * 450 + (Math.random() * 50 - 25) + 400,
+      top: row * 450 + (Math.random() * 50 - 25) + 80,
       rotation: Math.random() * 20 - 10, // Random rotation between -10 and 10 degrees
       animationDelay: Math.random() * 2,
     };
@@ -41,7 +41,7 @@ const Gallery = () => {
         }`}
       >
         {/* Header section */}
-        <div className="relative overflow-hidden pt-12 pb-8">
+        <div className="relative overflow-hidden pt-12 pb-4">
           <h2 className="text-5xl md:text-6xl font-script text-center text-primary animate-pulse">
             Our Beautiful Moments
           </h2>
