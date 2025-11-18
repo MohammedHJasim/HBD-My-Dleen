@@ -41,8 +41,8 @@ const Gallery = () => {
         }`}
       >
         {/* Header section */}
-        <div className="relative h-96 overflow-hidden mb-32">
-          <h2 className="text-5xl md:text-6xl font-script text-center text-primary mb-8 pt-8 animate-pulse">
+        <div className="relative overflow-hidden pt-12 pb-8">
+          <h2 className="text-5xl md:text-6xl font-script text-center text-primary animate-pulse">
             Our Beautiful Moments
           </h2>
         </div>
@@ -84,7 +84,7 @@ const Gallery = () => {
         </div>
 
         {/* Long message section */}
-        <div className="relative z-10 max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-romantic-pink/30">
+        <div className="relative z-10 max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-romantic-pink/30 mb-32">
           <div className="mb-6 flex justify-center">
             <div className="text-5xl animate-pulse">💕</div>
           </div>
