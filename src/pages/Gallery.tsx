@@ -91,22 +91,26 @@ const Gallery = () => {
           
           <div className="prose prose-lg max-w-none text-foreground/90">
             <p className="mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              My soulmate, my girl, my love, my supporter, my baby, my princess, my queen, my daughter, my little kid, my future fiancée, my future wife, the mother of my future kids, my best friend, the female version of me, my girlfriend, my everything — the one and only, my Dleen.
             </p>
             <p className="mb-4">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Many times when I’m with you—looking into your eyes, holding you in my arms, kissing you—or even when I’m alone thinking about you, I feel like I’m living inside one of those love novels people dream about. Or like I’m in a utopia that writers imagine but can never reach.
+But I reached it… because of you.
+You make me feel like those stories became real, and I’m the one chosen to live that dream with you. That’s how happy I am, how much I enjoy everything with you, how perfect you make everything around me feel.
             </p>
             <p className="mb-4">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+              My daughter, happy birthday to you.
+I wish you a year full of me — me kissing you, me hugging you, me smiling at you, me looking at you, me admiring you, me catching you, and a year full of happiness, success, love, the people you care about, enjoyment, full marks, smiles, laughter, and the warmth of family. I wish you a year where your dreams start becoming reality.
             </p>
             <p className="mb-4">
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+              My baby love, I love you so much — in a way you could never imagine. My love for you competes with the size of the universe. Each day, each hour, each minute, each second, I love you more.
+When I’m with you, the only happiness I feel is you. Whatever else happens, no matter how great it is, it never affects me. I can’t see anything except you. Everything else becomes blank.
             </p>
             <p className="mb-4">
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+              I promise you, and inshallah in this coming year and throughout your whole life, I will be next to you as much as I can. I will protect you, surround you, support you, make you happy, make your wishes come true, solve your problems, and always be your man.
             </p>
             <p className="mb-4">
-              Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.
+              I pray that God never shows me sadness in you, and keeps you in my life as my baby forever.
             </p>
           </div>
         </div>
