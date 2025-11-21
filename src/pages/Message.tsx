@@ -46,11 +46,11 @@ const Message = () => {
           </div>
           
           <p className="text-xl md:text-2xl leading-relaxed text-foreground/90 mb-8 font-light">
-            Me as a programmer, I will always try to show you my love and impress you by doing things related to programming.
+            As a programmer, I’ll always try to show you my love and impress you through the things I create.
             <br /><br />
-            You know that programming is one of the main things in my life, it's like my own language.
+            You know programming is a big part of my life—it’s like my own language.
             <br /><br />
-            So whatever I do, there will always be something that expresses my love for you through the language I speak.
+            So whatever I build, there will always be a part of it that expresses my love for you through the language I speak.
           </p>
 
           <div className="flex justify-center animate-bounce">
