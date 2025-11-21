@@ -9,14 +9,14 @@ const Gallery = () => {
     setIsVisible(true);
   }, []);
 
-  // Generate placeholder photos with dates and random positions/rotations
+  // Generate photos from local images folder
   const photos = Array.from({ length: 30 }, (_, i) => {
     const row = Math.floor(i / 5);
     const col = i % 5;
     
     return {
       id: i + 1,
-      url: `https://images.unsplash.com/photo-${1500000000000 + i * 100000}?w=400&h=400&fit=crop`,
+      url: `/images/photo-${i + 1}.jpg`,
       date: new Date(2024, 0, i + 1).toLocaleDateString("en-US", {
         month: "long",
         day: "numeric",
